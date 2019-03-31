@@ -1,0 +1,200 @@
+// buttons
+.load-routes__btn,
+.create-template__btn,
+.update-profile__btn,
+.view-stats__btn,
+.save-routes__btn,
+.save-template__btn,
+.template-name-modal__btn {
+  padding: 1rem 4rem;
+  margin: 1.5rem 0;
+  border: 2px solid $color-primary-light;  
+  border-radius: 2rem;
+  background-color: transparent;
+  color: $color-primary-light;
+  outline: none;
+  min-width: 26rem;
+  font-size: 2rem;
+  letter-spacing: .2rem;
+  transition: background-color .3s ease, color .3s ease;
+
+  &:hover:not([disabled]) {
+    background-color: $color-primary-light;
+    color: #777;
+    cursor: pointer
+  }
+
+  &:disabled, &[disabled], &[disabled="true"] {
+    border: 2px solid #888;
+    color: #888;
+    cursor: not-allowed;
+  }
+}
+
+.btn-log-out {
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  border: none;
+  background: url(../img/logout.svg);
+  transition: transform .3s;
+
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
+
+.btn-cancel {
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  border: none;
+  background: url(../img/cancel.svg);
+  transition: transform .3s;
+
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
+
+// states
+.invalid {
+  background: $color-error-normal;
+  color: $color-primary-light;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.error, .error--cancel {
+  background-color: $color-error-light;
+  color: $color-error-normal;
+  font-family: 'Questrial', sans-serif;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  letter-spacing: 0;
+  margin: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.error--cancel::before {
+  content: '\00d7';
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.success {
+  color: $color-primary-light;
+  font-family: 'Questrial', sans-serif;
+  font-size: 2rem;
+  padding: 0 3rem 1rem ;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  min-height: 7rem;
+  line-height: 7rem;
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-modal {
+  height: 20rem;
+  width: 50%;
+  position: absolute;
+  color: $color-error-normal;
+  text-align: center;
+  line-height: 20rem;
+  font-size: 2rem;
+  top: 25%;
+  left: 25%;
+  z-index: 5;
+  opacity: .9;
+  background-color: $color-error-light;
+  border: 2px solid $color-error-normal;
+}
+
+.template-name-modal {
+  //height: 20rem;
+  width: 50%;
+  position: absolute;
+  color: $color-primary-light;
+  text-align: center;
+  font-size: 2rem;
+  top: 25%;
+  left: 25%;
+  z-index: 5;
+  opacity: 1;
+  padding: 3rem;
+  box-shadow: 0 0 3rem #5a5a5a;
+  background-color: #777;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  &__label {
+    margin: 3rem auto 2rem;
+  }
+
+  &__input {
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+    border: 2px solid $color-primary-light;
+    font-family: 'Questrial', sans-serif;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    border-radius: 2rem;
+    height: 4.5rem;
+    background-color: transparent;
+    color: $color-primary-light;
+    outline: none;
+    transition: background-color .3s ease, color .3s ease;
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      text-align: center;
+      color: $color-primary-light;
+      opacity: 1; /* Firefox */
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      text-align: center;
+      color: $color-primary-light;
+    }
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      text-align: center;
+      color: $color-primary-light;
+    }
+    &:hover:not([disabled="true"]) {
+      background-color: $color-primary-light;
+      color: #777;
+      cursor: pointer
+    }
+  }
+
+  &__input[disabled="true"] {
+    border: 2px solid #888;
+    color: #888;
+    cursor: not-allowed;
+  }
+
+  &__message {
+    line-height: 2rem;
+    font-size: 1.6rem;
+  }
+
+  &__btn {
+    max-width: 10rem;
+    margin: 2rem auto;
+  }
+}

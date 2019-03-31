@@ -1,0 +1,1 @@
+<p class="<?php echo $error_message ? "error" : "hidden" ?>"><?php echo $error_message ?? "" ?></p>
