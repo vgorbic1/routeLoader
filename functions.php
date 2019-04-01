@@ -74,7 +74,7 @@ function pdo_multi_insert($tableName, $data, $pdoObject) {
     $pdoStatement = $pdoObject->prepare($sql);
     foreach($toBind as $param => $val){
         $pdoStatement->bindValue($param, $val);
-    }
+    }  
     $pdoStatement->execute();
     return $pdoStatement->rowCount();
 }
